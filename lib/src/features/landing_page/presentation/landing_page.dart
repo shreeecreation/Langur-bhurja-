@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:langurburja/src/core/assets/assets.gen.dart';
 import 'package:langurburja/src/core/extensions/extensions.dart';
+import 'package:langurburja/src/core/routes/router.dart';
 import 'package:langurburja/src/core/themes/app_styles.dart';
 import 'package:langurburja/src/core/widgets/custom_button.dart';
 import 'package:langurburja/src/core/widgets/scaffold_wrapper.dart';
@@ -25,7 +26,7 @@ class LandingPage extends StatelessWidget {
               textColor: AppColors.white,
               fullWidth: true,
               backgroundColor: AppColors.primary,
-              onPressed: () {}),
+              onPressed: () => AllRoutes.normalGameRoute()),
           20.verticalSpace,
           CustomButton.text(
               label: "Win Mode",
@@ -34,7 +35,7 @@ class LandingPage extends StatelessWidget {
               fullWidth: true,
               textColor: AppColors.white,
               backgroundColor: AppColors.primary,
-              onPressed: () {}),
+              onPressed: () => AllRoutes.normalGameRoute()),
           30.verticalSpace,
           ShowingDice(),
           (context.height / 6).verticalSpace,
