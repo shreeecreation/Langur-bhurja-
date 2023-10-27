@@ -9,14 +9,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "64.0.0"
-  adaptive_sizer:
-    dependency: "direct main"
-    description:
-      name: adaptive_sizer
-      sha256: d4104f8c596cc116904c20b401f5487a051f3b5beb908eb8646cbd17e4374a28
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.4"
   analyzer:
     dependency: transitive
     description:

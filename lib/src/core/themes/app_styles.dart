@@ -5,14 +5,14 @@ import 'package:langurburja/src/core/extensions/extensions.dart';
 abstract class AppStyles {
   // text 9px
   //regular
-  static TextStyle text9Px = GoogleFonts.dmSans(
+  static TextStyle text9Px = GoogleFonts.tsukimiRounded(
     fontSize: 9.sp,
     height: calculateHeight(11, 9),
     fontStyle: FontStyle.normal,
   );
 
   //medium
-  static TextStyle text9PxMedium = GoogleFonts.dmSans(
+  static TextStyle text9PxMedium = GoogleFonts.tsukimiRounded(
     fontSize: 9.sp,
     fontWeight: FontWeight.w500,
     height: calculateHeight(11, 9),
@@ -20,7 +20,7 @@ abstract class AppStyles {
   );
 
   //SemiBold
-  static TextStyle text9PxSemiBold = GoogleFonts.dmSans(
+  static TextStyle text9PxSemiBold = GoogleFonts.tsukimiRounded(
     fontSize: 9.sp,
     fontWeight: FontWeight.w600,
     height: calculateHeight(11, 9),
@@ -28,7 +28,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text9PxBold = GoogleFonts.dmSans(
+  static TextStyle text9PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 9.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(11, 9),
@@ -38,14 +38,14 @@ abstract class AppStyles {
   // text 12px
 
   //regular
-  static TextStyle text12Px = GoogleFonts.dmSans(
+  static TextStyle text12Px = GoogleFonts.tsukimiRounded(
     fontSize: 12.sp,
     height: calculateHeight(14, 12),
     fontStyle: FontStyle.normal,
   );
 
   //medium
-  static TextStyle text12PxMedium = GoogleFonts.dmSans(
+  static TextStyle text12PxMedium = GoogleFonts.tsukimiRounded(
     fontSize: 12.sp,
     fontWeight: FontWeight.w500,
     height: calculateHeight(14, 12),
@@ -53,7 +53,7 @@ abstract class AppStyles {
   );
 
   //SemiBold
-  static TextStyle text12PxSemiBold = GoogleFonts.dmSans(
+  static TextStyle text12PxSemiBold = GoogleFonts.tsukimiRounded(
     fontSize: 12.sp,
     fontWeight: FontWeight.w600,
     height: calculateHeight(14, 12),
@@ -61,7 +61,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text12PxBold = GoogleFonts.dmSans(
+  static TextStyle text12PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 12.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(14, 12),
@@ -70,14 +70,14 @@ abstract class AppStyles {
 
   // text 13px
   //regular
-  static TextStyle text13Px = GoogleFonts.dmSans(
+  static TextStyle text13Px = GoogleFonts.tsukimiRounded(
     fontSize: 13.sp,
     height: calculateHeight(17, 13),
     fontStyle: FontStyle.normal,
   );
 
   //medium
-  static TextStyle text13PxMedium = GoogleFonts.dmSans(
+  static TextStyle text13PxMedium = GoogleFonts.tsukimiRounded(
     fontSize: 13.sp,
     fontWeight: FontWeight.w500,
     height: calculateHeight(17, 13),
@@ -85,7 +85,7 @@ abstract class AppStyles {
   );
 
   //SemiBold
-  static TextStyle text13PxSemiBold = GoogleFonts.dmSans(
+  static TextStyle text13PxSemiBold = GoogleFonts.tsukimiRounded(
     fontSize: 13.sp,
     fontWeight: FontWeight.w600,
     height: calculateHeight(17, 13),
@@ -93,7 +93,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text13PxBold = GoogleFonts.dmSans(
+  static TextStyle text13PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 13.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(17, 13),
@@ -102,14 +102,14 @@ abstract class AppStyles {
 
   // text 14px
   //regular
-  static TextStyle text14Px = GoogleFonts.dmSans(
+  static TextStyle text14Px = GoogleFonts.tsukimiRounded(
     fontSize: 14.sp,
     height: calculateHeight(17, 14),
     fontStyle: FontStyle.normal,
   );
 
   //medium
-  static TextStyle text14PxMedium = GoogleFonts.dmSans(
+  static TextStyle text14PxMedium = GoogleFonts.tsukimiRounded(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     height: calculateHeight(17, 14),
@@ -117,7 +117,7 @@ abstract class AppStyles {
   );
 
   //SemiBold
-  static TextStyle text14PxSemiBold = GoogleFonts.dmSans(
+  static TextStyle text14PxSemiBold = GoogleFonts.tsukimiRounded(
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,
     height: calculateHeight(17, 14),
@@ -125,7 +125,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text14PxBold = GoogleFonts.dmSans(
+  static TextStyle text14PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 14.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(17, 14),
@@ -134,14 +134,14 @@ abstract class AppStyles {
 
   // text 16px
   //regular
-  static TextStyle text16Px = GoogleFonts.dmSans(
+  static TextStyle text16Px = GoogleFonts.tsukimiRounded(
     fontSize: 16.sp,
     height: calculateHeight(19, 16),
     fontStyle: FontStyle.normal,
   );
 
   //medium
-  static TextStyle text16PxMedium = GoogleFonts.dmSans(
+  static TextStyle text16PxMedium = GoogleFonts.tsukimiRounded(
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
     height: calculateHeight(19, 16),
@@ -149,7 +149,7 @@ abstract class AppStyles {
   );
 
   //SemiBold
-  static TextStyle text16PxSemiBold = GoogleFonts.dmSans(
+  static TextStyle text16PxSemiBold = GoogleFonts.tsukimiRounded(
     fontSize: 16.sp,
     fontWeight: FontWeight.w600,
     height: calculateHeight(19, 16),
@@ -157,7 +157,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text16PxBold = GoogleFonts.dmSans(
+  static TextStyle text16PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 16.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(19, 16),
@@ -166,14 +166,14 @@ abstract class AppStyles {
 
   // text 18px
   //regular
-  static TextStyle text18Px = GoogleFonts.dmSans(
+  static TextStyle text18Px = GoogleFonts.tsukimiRounded(
     fontSize: 18.sp,
     height: calculateHeight(21, 18),
     fontStyle: FontStyle.normal,
   );
 
   //medium
-  static TextStyle text18PxMedium = GoogleFonts.dmSans(
+  static TextStyle text18PxMedium = GoogleFonts.tsukimiRounded(
     fontSize: 18.sp,
     fontWeight: FontWeight.w500,
     height: calculateHeight(21, 18),
@@ -181,7 +181,7 @@ abstract class AppStyles {
   );
 
   //SemiBold
-  static TextStyle text18PxSemiBold = GoogleFonts.dmSans(
+  static TextStyle text18PxSemiBold = GoogleFonts.tsukimiRounded(
     fontSize: 18.sp,
     fontWeight: FontWeight.w600,
     height: calculateHeight(21, 18),
@@ -189,7 +189,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text18PxBold = GoogleFonts.dmSans(
+  static TextStyle text18PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 18.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(21, 18),
@@ -198,14 +198,14 @@ abstract class AppStyles {
 
   // text 20px
   //regular
-  static TextStyle text20Px = GoogleFonts.dmSans(
+  static TextStyle text20Px = GoogleFonts.tsukimiRounded(
     fontSize: 20.sp,
     height: calculateHeight(24, 20),
     fontStyle: FontStyle.normal,
   );
 
   //medium
-  static TextStyle text20PxMedium = GoogleFonts.dmSans(
+  static TextStyle text20PxMedium = GoogleFonts.tsukimiRounded(
     fontSize: 20.sp,
     fontWeight: FontWeight.w500,
     height: calculateHeight(24, 20),
@@ -213,7 +213,7 @@ abstract class AppStyles {
   );
 
   //SemiBold
-  static TextStyle text20PxSemiBold = GoogleFonts.dmSans(
+  static TextStyle text20PxSemiBold = GoogleFonts.tsukimiRounded(
     fontSize: 20.sp,
     fontWeight: FontWeight.w600,
     height: calculateHeight(24, 20),
@@ -221,7 +221,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text20PxBold = GoogleFonts.dmSans(
+  static TextStyle text20PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 20.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(24, 20),
@@ -230,14 +230,14 @@ abstract class AppStyles {
 
   // text 24px
   //regular
-  static TextStyle text24Px = GoogleFonts.dmSans(
+  static TextStyle text24Px = GoogleFonts.tsukimiRounded(
     fontSize: 24.sp,
     height: calculateHeight(28, 24),
     fontStyle: FontStyle.normal,
   );
 
   //medium
-  static TextStyle text24PxMedium = GoogleFonts.dmSans(
+  static TextStyle text24PxMedium = GoogleFonts.tsukimiRounded(
     fontSize: 24.sp,
     fontWeight: FontWeight.w500,
     height: calculateHeight(28, 24),
@@ -245,7 +245,7 @@ abstract class AppStyles {
   );
 
   //SemiBold
-  static TextStyle text24PxSemiBold = GoogleFonts.dmSans(
+  static TextStyle text24PxSemiBold = GoogleFonts.tsukimiRounded(
     fontSize: 24.sp,
     fontWeight: FontWeight.w600,
     height: calculateHeight(28, 24),
@@ -253,7 +253,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text24PxBold = GoogleFonts.dmSans(
+  static TextStyle text24PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 24.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(28, 24),
@@ -262,7 +262,7 @@ abstract class AppStyles {
 
   // text 36px
   //regular
-  static TextStyle text36Px = GoogleFonts.dmSans(
+  static TextStyle text36Px = GoogleFonts.tsukimiRounded(
     fontSize: 36.sp,
     height: calculateHeight(43, 36),
     fontStyle: FontStyle.normal,
@@ -270,7 +270,7 @@ abstract class AppStyles {
   );
 
   //medium
-  static TextStyle text36PxMedium = GoogleFonts.dmSans(
+  static TextStyle text36PxMedium = GoogleFonts.tsukimiRounded(
     fontSize: 36.sp,
     fontWeight: FontWeight.w500,
     height: calculateHeight(43, 36),
@@ -279,7 +279,7 @@ abstract class AppStyles {
   );
 
   //SemiBold
-  static TextStyle text36PxSemiBold = GoogleFonts.dmSans(
+  static TextStyle text36PxSemiBold = GoogleFonts.tsukimiRounded(
     fontSize: 36.sp,
     fontWeight: FontWeight.w600,
     height: calculateHeight(43, 36),
@@ -288,7 +288,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text36PxBold = GoogleFonts.dmSans(
+  static TextStyle text36PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 36.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(43, 36),
@@ -332,7 +332,7 @@ abstract class AppStyles {
   );
 
   //bold
-  static TextStyle text56PxBold = GoogleFonts.dmSans(
+  static TextStyle text56PxBold = GoogleFonts.tsukimiRounded(
     fontSize: 56.sp,
     fontWeight: FontWeight.bold,
     height: calculateHeight(67, 56),

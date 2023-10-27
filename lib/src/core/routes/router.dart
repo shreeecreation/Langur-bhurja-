@@ -5,6 +5,6 @@ class AllRoutes {
   AllRoutes._();
 
   static void homeRoutes() {
-    Get.offAll(const LandingPage(), transition: Transition.fadeIn);
+    Get.to(const LandingPage(), transition: Transition.fadeIn);
   }
 }

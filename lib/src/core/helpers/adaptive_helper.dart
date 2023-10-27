@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/widgets.dart';
 
 class AdaptiveHelper {
@@ -60,11 +59,9 @@ class AdaptiveHelper {
 
   Widget setVerticalSpacing(num height) => SizedBox(height: setHeight(height));
 
-  Widget setVerticalSpacingRadius(num height) =>
-      SizedBox(height: radius(height));
+  Widget setVerticalSpacingRadius(num height) => SizedBox(height: radius(height));
 
   Widget setHorizontalSpacing(num width) => SizedBox(width: setWidth(width));
 
-  Widget setHorizontalSpacingRadius(num width) =>
-      SizedBox(width: radius(width));
+  Widget setHorizontalSpacingRadius(num width) => SizedBox(width: radius(width));
 }
