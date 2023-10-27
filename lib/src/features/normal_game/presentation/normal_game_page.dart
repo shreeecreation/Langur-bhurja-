@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:langurburja/src/core/extensions/extensions.dart';
-import 'package:langurburja/src/core/routes/router.dart';
 import 'package:langurburja/src/core/widgets/custom_button.dart';
 import 'package:langurburja/src/core/widgets/scaffold_wrapper.dart';
 import 'package:langurburja/src/features/normal_game/bloc/cubit/normal_game_cubit.dart';
@@ -25,78 +24,25 @@ class NormalGamePage extends StatelessWidget {
         SizedBox(
           width: context.width,
           child: Row(
-            children: [
-              BlocBuilder<NormalGameCubit, NormalGameState>(
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    initial: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.langur.path,
-                      ),
-                    ),
-                    orElse: () => Container(),
-                    loading: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.video.path,
-                      ),
-                    ),
-                    success: (pathIndex) => Expanded(
-                      child: Image.asset(
-                        dice[pathIndex[0]],
-                      ),
-                    ),
-                  );
-                },
-              ),
-              12.horizontalSpace,
-              BlocBuilder<NormalGameCubit, NormalGameState>(
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    initial: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.langur.path,
-                      ),
-                    ),
-                    orElse: () => Container(),
-                    loading: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.video.path,
-                      ),
-                    ),
-                    success: (pathIndex) => Expanded(
-                      child: Image.asset(
-                        dice[pathIndex[1]],
-                      ),
-                    ),
-                  );
-                },
-              ),
-              12.horizontalSpace,
-              BlocBuilder<NormalGameCubit, NormalGameState>(
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    initial: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.langur.path,
-                      ),
-                    ),
-                    orElse: () => Container(),
-                    loading: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.video.path,
-                      ),
-                    ),
-                    success: (pathIndex) => Expanded(
-                      child: Image.asset(
-                        dice[pathIndex[2]],
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ],
+            children: List.generate(3, (index) {
+              return Expanded(
+                child: BlocBuilder<NormalGameCubit, NormalGameState>(
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                      initial: () => Image.asset(Assets.images.langur.path),
+                      orElse: () => Container(),
+                      loading: () => Image.asset(Assets.images.video.path),
+                      success: (pathIndex) {
+                        return Image.asset(dice[pathIndex[index]]);
+                      },
+                    );
+                  },
+                ),
+              );
+            }),
           ),
         ),
+        12.verticalSpace,
         SizedBox(
           width: context.width,
           child: Row(
@@ -173,25 +119,78 @@ class NormalGamePage extends StatelessWidget {
           ),
         ),
         30.verticalSpace,
-        CustomButton.text(
-          label: "Roll",
-          labelStyle: AppStyles.text16PxBold,
-          isDisabled: false,
-          fullWidth: true,
-          textColor: AppColors.white,
-          backgroundColor: AppColors.primary,
-          onPressed: () => context.read<NormalGameCubit>().startRolling(),
+        NoOfDices(dice: dice),
+        40.verticalSpace,
+        BlocBuilder<NormalGameCubit, NormalGameState>(
+          builder: (context, state) {
+            final loading = context.select<NormalGameCubit, bool>(
+              (value) => value.state.maybeWhen(
+                orElse: () => false,
+                loading: () => true,
+              ),
+            );
+            return CustomButton.text(
+              label: "Roll",
+              labelStyle: AppStyles.text16PxBold,
+              isDisabled: loading,
+              disabledColor: AppColors.textGrey,
+              fullWidth: true,
+              textColor: AppColors.white,
+              backgroundColor: AppColors.primary,
+              onPressed: () => context.read<NormalGameCubit>().startRolling(),
+            );
+          },
         ),
         10.verticalSpace,
-        CustomButton.text(
-            label: "Reset",
-            labelStyle: AppStyles.text16PxBold,
-            isDisabled: false,
-            fullWidth: true,
-            textColor: AppColors.white,
-            backgroundColor: AppColors.primary,
-            onPressed: () => AllRoutes.normalGameRoute()),
       ]).px(20),
+    );
+  }
+}
+
+class NoOfDices extends StatelessWidget {
+  const NoOfDices({
+    super.key,
+    required this.dice,
+  });
+
+  final List<String> dice;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: context.width,
+      child: BlocBuilder<NormalGameCubit, NormalGameState>(
+        builder: (context, state) {
+          return state.maybeWhen(
+            initial: () => Container(),
+            orElse: () => Container(),
+            loading: () => const Center(child: Text("~ ~ ~ ~ ~ ~ ~ ~ ~ ~")),
+            success: (pathIndex) {
+              int countOf3 = pathIndex.where((element) => element == 3).length;
+              int countOf5 = pathIndex.where((element) => element == 5).length;
+              int countOf1 = pathIndex.where((element) => element == 1).length;
+              int countOf4 = pathIndex.where((element) => element == 4).length;
+              int countOf2 = pathIndex.where((element) => element == 2).length;
+              int countOf0 = pathIndex.where((element) => element == 0).length;
+              List<int> counts = [countOf0, countOf1, countOf2, countOf3, countOf4, countOf5];
+              return Row(
+                children: List.generate(
+                  dice.length,
+                  (index) => Expanded(
+                    child: Row(
+                      children: [
+                        Image.asset(dice[index], height: 30),
+                        const SizedBox(width: 2),
+                        Text(counts[index].toString(), style: AppStyles.text16PxBold),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

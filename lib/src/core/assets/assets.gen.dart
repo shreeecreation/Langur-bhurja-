@@ -41,11 +41,14 @@ class $AssetsImagesGen {
 class $AssetsSoundsGen {
   const $AssetsSoundsGen();
 
+  /// File path: assets/sounds/diceroll.mp3
+  String get dicerollMp3 => 'assets/sounds/diceroll.mp3';
+
   /// File path: assets/sounds/diceroll.wav
-  String get diceroll => 'assets/sounds/diceroll.wav';
+  String get dicerollWav => 'assets/sounds/diceroll.wav';
 
   /// List of all assets
-  List<String> get values => [diceroll];
+  List<String> get values => [dicerollMp3, dicerollWav];
 }
 
 class Assets {

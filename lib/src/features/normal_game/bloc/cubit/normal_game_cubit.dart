@@ -23,13 +23,15 @@ class NormalGameCubit extends Cubit<NormalGameState> {
   void startRolling() async {
     emit(const NormalGameState.loading());
     final player = AudioPlayer();
-    await player.play(UrlSource(Assets.sounds.diceroll));
+    await player.play(
+      AssetSource("sounds/diceroll.mp3"),
+    );
     Random random = Random();
     for (int i = 0; i < 6; i++) {
-      int a = random.nextInt(6);
       index[i] = random.nextInt(6);
+      print(index);
     }
-    Timer(const Duration(seconds: 1), () {
+    Timer(const Duration(milliseconds: 1500), () {
       emit(NormalGameState.success(pathIndex: index));
     });
   }
