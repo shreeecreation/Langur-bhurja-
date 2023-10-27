@@ -137,7 +137,7 @@ class ManipulatedGamePage extends StatelessWidget {
               fullWidth: true,
               textColor: AppColors.white,
               backgroundColor: AppColors.primary,
-              onPressed: () => context.read<NormalGameCubit>().startRolling(),
+              onPressed: () => context.read<NormalGameCubit>().manipulatedRolling(),
             );
           },
         ),
