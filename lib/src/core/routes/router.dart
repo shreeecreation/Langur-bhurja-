@@ -12,6 +12,6 @@ class AllRoutes {
   }
 
   static void normalGameRoute() {
-    Get.to(() => const NormalGamePage(), transition: Transition.fadeIn, duration: 500.ms, curve: Curves.easeIn);
+    Get.to(() => NormalGamePage(), transition: Transition.fadeIn, duration: 500.ms, curve: Curves.easeIn);
   }
 }

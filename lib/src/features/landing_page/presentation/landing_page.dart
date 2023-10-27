@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:langurburja/src/core/assets/assets.gen.dart';
 import 'package:langurburja/src/core/extensions/extensions.dart';
 import 'package:langurburja/src/core/routes/router.dart';
 import 'package:langurburja/src/core/themes/app_styles.dart';
 import 'package:langurburja/src/core/widgets/custom_button.dart';
 import 'package:langurburja/src/core/widgets/scaffold_wrapper.dart';
+import 'package:langurburja/src/features/normal_game/bloc/cubit/normal_game_cubit.dart';
 
 import '../../../core/themes/app_colors.dart';
 
@@ -13,34 +15,37 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldWrapper(
-      body: SizedBox(
-        width: context.width,
-        child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Text("Play Langur Bhurja", style: AppStyles.text24PxSemiBold),
-          30.verticalSpace,
-          CustomButton.text(
-              label: "Normal Mode",
-              labelStyle: AppStyles.text16PxSemiBold,
-              isDisabled: false,
-              textColor: AppColors.white,
-              fullWidth: true,
-              backgroundColor: AppColors.primary,
-              onPressed: () => AllRoutes.normalGameRoute()),
-          20.verticalSpace,
-          CustomButton.text(
-              label: "Win Mode",
-              labelStyle: AppStyles.text16PxSemiBold,
-              isDisabled: false,
-              fullWidth: true,
-              textColor: AppColors.white,
-              backgroundColor: AppColors.primary,
-              onPressed: () => AllRoutes.normalGameRoute()),
-          30.verticalSpace,
-          ShowingDice(),
-          (context.height / 6).verticalSpace,
-        ]),
-      ).px(20),
+    return BlocProvider(
+      create: (context) => NormalGameCubit(),
+      child: ScaffoldWrapper(
+        body: SizedBox(
+          width: context.width,
+          child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Text("Play Langur Bhurja", style: AppStyles.text24PxSemiBold),
+            30.verticalSpace,
+            CustomButton.text(
+                label: "Normal Mode",
+                labelStyle: AppStyles.text16PxSemiBold,
+                isDisabled: false,
+                textColor: AppColors.white,
+                fullWidth: true,
+                backgroundColor: AppColors.primary,
+                onPressed: () => AllRoutes.normalGameRoute()),
+            20.verticalSpace,
+            CustomButton.text(
+                label: "Win Mode",
+                labelStyle: AppStyles.text16PxSemiBold,
+                isDisabled: false,
+                fullWidth: true,
+                textColor: AppColors.white,
+                backgroundColor: AppColors.primary,
+                onPressed: () => AllRoutes.normalGameRoute()),
+            30.verticalSpace,
+            ShowingDice(),
+            (context.height / 6).verticalSpace,
+          ]),
+        ).px(20),
+      ),
     );
   }
 }

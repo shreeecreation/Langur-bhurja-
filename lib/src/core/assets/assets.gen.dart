@@ -30,14 +30,29 @@ class $AssetsImagesGen {
   /// File path: assets/images/surat.png
   AssetGenImage get surat => const AssetGenImage('assets/images/surat.png');
 
+  /// File path: assets/images/video.gif
+  AssetGenImage get video => const AssetGenImage('assets/images/video.gif');
+
   /// List of all assets
-  List<AssetGenImage> get values => [bhurja, chiri, heart, ita, langur, surat];
+  List<AssetGenImage> get values =>
+      [bhurja, chiri, heart, ita, langur, surat, video];
+}
+
+class $AssetsSoundsGen {
+  const $AssetsSoundsGen();
+
+  /// File path: assets/sounds/diceroll.wav
+  String get diceroll => 'assets/sounds/diceroll.wav';
+
+  /// List of all assets
+  List<String> get values => [diceroll];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsSoundsGen sounds = $AssetsSoundsGen();
 }
 
 class AssetGenImage {
