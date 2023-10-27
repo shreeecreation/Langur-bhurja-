@@ -18,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(milliseconds: 700), () {
+    Timer(const Duration(milliseconds: 1500), () {
       AllRoutes.homeRoutes();
     });
   }
