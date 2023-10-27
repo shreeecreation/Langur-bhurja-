@@ -39,7 +39,7 @@ class LandingPage extends StatelessWidget {
                 fullWidth: true,
                 textColor: AppColors.white,
                 backgroundColor: AppColors.primary,
-                onPressed: () => AllRoutes.normalGameRoute()),
+                onPressed: () => AllRoutes.manipulatedGameRoute()),
             30.verticalSpace,
             ShowingDice(),
             (context.height / 6).verticalSpace,
