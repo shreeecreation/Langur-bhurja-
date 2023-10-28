@@ -21,7 +21,7 @@ class NormalGamePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScaffoldWrapper(
       appBar: AppBar(
-        title: const Text("Normal Game"),
+        title: Text("Normal Game", style: AppStyles.text24Px),
       ),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
         SizedBox(
