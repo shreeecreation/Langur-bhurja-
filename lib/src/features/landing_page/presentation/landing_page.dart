@@ -18,10 +18,38 @@ class LandingPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => NormalGameCubit(),
       child: ScaffoldWrapper(
+        appBar: AppBar(actions: [
+          Tooltip(
+            textStyle: AppStyles.text12Px,
+            decoration: const BoxDecoration(color: AppColors.white),
+            message:
+                '"Jhandi Munda" is traditional betting gambling board game played in most country. This game is called as "Langur Burja" in Nepal and also known as "Crown and Anchor" in other part of the world',
+            child: Container(
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                  icon: const Icon(Icons.info, color: AppColors.primary, size: 50),
+                  onPressed: () {},
+                )),
+          ),
+          12.horizontalSpace,
+        ]),
         body: SizedBox(
           width: context.width,
           child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.center, children: [
-            Text("Play Langur Bhurja", style: AppStyles.text24PxSemiBold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              
+              children: [
+                Image.asset(Assets.images.bhurja.path, height: 50),
+                5.horizontalSpace,
+                Text("Jhandi Munda \n Langur Bhurja", textAlign: TextAlign.center, style: AppStyles.text24PxSemiBold),
+                5.horizontalSpace,
+
+                Image.asset(Assets.images.bhurja.path, height: 50),
+              ],
+            ),
             30.verticalSpace,
             CustomButton.text(
                 label: "Normal Mode",
@@ -43,6 +71,8 @@ class LandingPage extends StatelessWidget {
             30.verticalSpace,
             ShowingDice(),
             (context.height / 6).verticalSpace,
+            Text("Developed  by Kanha Creation", style: AppStyles.text13Px.textGrey),
+            5.verticalSpace,
           ]),
         ).px(20),
       ),

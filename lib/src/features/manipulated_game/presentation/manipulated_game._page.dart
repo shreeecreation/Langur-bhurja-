@@ -6,6 +6,7 @@ import 'package:langurburja/src/core/widgets/scaffold_wrapper.dart';
 import 'package:langurburja/src/features/normal_game/bloc/cubit/normal_game_cubit.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/themes/theme.dart';
+import 'widgets/question_mark_dialog_box.dart';
 
 class ManipulatedGamePage extends StatelessWidget {
   ManipulatedGamePage({super.key});
@@ -20,7 +21,18 @@ class ManipulatedGamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWrapper(
-      appBar: AppBar(title: const Text("Normal Game")),
+      appBar: AppBar(title: const Text("Win Mode"), actions: [
+        Container(
+          height: 50,
+          width: 50,
+          decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.primary),
+          child: IconButton(
+            icon: const Icon(Icons.question_mark, color: AppColors.white, size: 35),
+            onPressed: () => QuestionMarkDialogBox.showDialogs(context),
+          ),
+        ),
+        20.horizontalSpace,
+      ]),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
         SizedBox(
           width: context.width,
@@ -34,7 +46,6 @@ class ManipulatedGamePage extends StatelessWidget {
                       orElse: () => Container(),
                       loading: () => Image.asset(Assets.images.video.path),
                       success: (pathIndex) {
-                        print(pathIndex);
                         return Image.asset(dice[pathIndex[index]]);
                       },
                     );
@@ -48,76 +59,22 @@ class ManipulatedGamePage extends StatelessWidget {
         SizedBox(
           width: context.width,
           child: Row(
-            children: [
-              BlocBuilder<NormalGameCubit, NormalGameState>(
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    initial: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.langur.path,
-                      ),
-                    ),
-                    orElse: () => Container(),
-                    loading: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.video.path,
-                      ),
-                    ),
-                    success: (pathIndex) => Expanded(
-                      child: Image.asset(
-                        dice[pathIndex[3]],
-                      ),
-                    ),
-                  );
-                },
-              ),
-              12.horizontalSpace,
-              BlocBuilder<NormalGameCubit, NormalGameState>(
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    initial: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.langur.path,
-                      ),
-                    ),
-                    orElse: () => Container(),
-                    loading: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.video.path,
-                      ),
-                    ),
-                    success: (pathIndex) => Expanded(
-                      child: Image.asset(
-                        dice[pathIndex[4]],
-                      ),
-                    ),
-                  );
-                },
-              ),
-              12.horizontalSpace,
-              BlocBuilder<NormalGameCubit, NormalGameState>(
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    initial: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.langur.path,
-                      ),
-                    ),
-                    orElse: () => Container(),
-                    loading: () => Expanded(
-                      child: Image.asset(
-                        Assets.images.video.path,
-                      ),
-                    ),
-                    success: (pathIndex) => Expanded(
-                      child: Image.asset(
-                        dice[pathIndex[5]],
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ],
+            children: List.generate(3, (index) {
+              return Expanded(
+                child: BlocBuilder<NormalGameCubit, NormalGameState>(
+                  builder: (context, state) {
+                    return state.maybeWhen(
+                      initial: () => Image.asset(Assets.images.langur.path),
+                      orElse: () => Container(),
+                      loading: () => Image.asset(Assets.images.video.path),
+                      success: (pathIndex) {
+                        return Image.asset(dice[pathIndex[index + 3]]);
+                      },
+                    );
+                  },
+                ),
+              );
+            }),
           ),
         ),
         30.verticalSpace,
