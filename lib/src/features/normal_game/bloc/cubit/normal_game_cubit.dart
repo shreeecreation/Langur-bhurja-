@@ -91,7 +91,6 @@ class NormalGameCubit extends Cubit<NormalGameState> {
           index = choosedList[choosedListIndex];
           break;
       }
-      print(manipulateRollCount);
       pressedRollCount = 0;
     } else {
       for (int i = 0; i < 6; i++) {
