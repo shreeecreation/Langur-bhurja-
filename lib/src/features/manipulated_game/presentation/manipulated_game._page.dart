@@ -21,7 +21,7 @@ class ManipulatedGamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWrapper(
-      appBar: AppBar(title: const Text("Win Mode"), actions: [
+      appBar: AppBar(title: Text("Win Mode", style: AppStyles.text24Px), actions: [
         Container(
           height: 50,
           width: 50,
