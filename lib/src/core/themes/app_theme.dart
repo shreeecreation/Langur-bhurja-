@@ -15,13 +15,12 @@ class AppTheme {
     textTheme: GoogleFonts.dmSansTextTheme(),
     useMaterial3: true,
     fontFamily: GoogleFonts.dmSans().fontFamily,
-    colorScheme: ColorScheme.fromSeed(
-        seedColor: AppColors.primary, primary: AppColors.primary),
+    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary, primary: AppColors.primary),
     appBarTheme: const AppBarTheme(
       elevation: 0,
       backgroundColor: AppColors.scaffoldBackground,
       surfaceTintColor: AppColors.scaffoldBackground,
-      systemOverlayStyle: const SystemUiOverlayStyle(
+      systemOverlayStyle: SystemUiOverlayStyle(
         // statusBarColor: AppColors.scaffoldBackground,
         statusBarBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.light,
@@ -48,8 +47,7 @@ class AppTheme {
     splashColor: AppColors.white,
     inputDecorationTheme: InputDecorationTheme(
       isDense: true,
-      contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w)
-          .copyWith(bottom: 20.h),
+      contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w).copyWith(bottom: 20.h),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.r),
         borderSide: BorderSide.none,

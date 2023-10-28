@@ -12,7 +12,8 @@ part 'normal_game_state.dart';
 class NormalGameCubit extends Cubit<NormalGameState> {
   NormalGameCubit() : super(const NormalGameState.initial());
 
-  final List<String> dice = [     Assets.images.bhurja.path,
+  final List<String> dice = [
+    Assets.images.bhurja.path,
     Assets.images.langur.path,
     Assets.images.heart.path,
     Assets.images.ita.path,
@@ -46,35 +47,58 @@ class NormalGameCubit extends Cubit<NormalGameState> {
       AssetSource("sounds/diceroll.mp3"),
     );
     Random random = Random();
-    if (pressedRollCount > 5) {
+    if (pressedRollCount >= 5) {
       pressedRollCount = 0;
     } else {
       pressedRollCount++;
     }
 
-    for (int i = 0; i < 6; i++) {
-      if (pressedRollCount == random.nextInt(3) + 3 && pressedRollCount > 3) {
-        if (manipulateRollCount > 5) {
-          manipulateRollCount = 0;
-        } else {
-          manipulateRollCount++;
-        }
-        switch(manipulateRollCount)
-        {
-          case 1:
-          int choosedListIndex = random.nextInt(5);
-        List<int> choosedList = [...AllList.bhrujaList1, ]
-          index[i] = 
-        }
-        index[i] = random.nextInt( 5 - manipulateRollCount);
-        print(index);
-        pressedRollCount = 0;
+    if (pressedRollCount == 4) {
+      if (manipulateRollCount >= 6) {
+        manipulateRollCount = 0;
       } else {
+        manipulateRollCount++;
+      }
+      switch (manipulateRollCount) {
+        case 1:
+          int choosedListIndex = random.nextInt(5);
+          List<List<int>> choosedList = [AllList.bhrujaList1, AllList.bhrujaList2, AllList.bhrujaList3, AllList.bhrujaList4, AllList.bhrujaList5];
+          index = choosedList[choosedListIndex];
+          break;
+        case 2:
+          int choosedListIndex = random.nextInt(5);
+          List<List<int>> choosedList = [AllList.langurList1, AllList.langurList2, AllList.langurList3, AllList.langurList4, AllList.langurList5];
+          index = choosedList[choosedListIndex];
+          break;
+        case 3:
+          int choosedListIndex = random.nextInt(5);
+          List<List<int>> choosedList = [AllList.heartList1, AllList.heartList2, AllList.heartList3, AllList.heartList4, AllList.heartList5];
+          index = choosedList[choosedListIndex];
+          break;
+        case 4:
+          int choosedListIndex = random.nextInt(5);
+          List<List<int>> choosedList = [AllList.itaList1, AllList.itaList2, AllList.itaList3, AllList.itaList4, AllList.itaList5];
+          index = choosedList[choosedListIndex];
+          break;
+        case 5:
+          int choosedListIndex = random.nextInt(5);
+          List<List<int>> choosedList = [AllList.suratList1, AllList.suratList2, AllList.suratList3, AllList.suratList4, AllList.suratList5];
+          index = choosedList[choosedListIndex];
+          break;
+        case 6:
+          int choosedListIndex = random.nextInt(5);
+          List<List<int>> choosedList = [AllList.chiriList1, AllList.chiriList2, AllList.chiriList3, AllList.chiriList4, AllList.chiriList5];
+          index = choosedList[choosedListIndex];
+          break;
+      }
+      print(manipulateRollCount);
+      pressedRollCount = 0;
+    } else {
+      for (int i = 0; i < 6; i++) {
         index[i] = random.nextInt(6);
       }
     }
-    print(manipulateRollCount);
-    print(pressedRollCount);
+
     Timer(const Duration(milliseconds: 1500), () {
       emit(NormalGameState.success(pathIndex: index));
     });

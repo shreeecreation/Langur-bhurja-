@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:langurburja/src/core/extensions/extensions.dart';
 import 'package:langurburja/src/core/widgets/custom_button.dart';
@@ -20,6 +20,7 @@ class ManipulatedGamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWrapper(
+      appBar: AppBar(title: const Text("Normal Game")),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
         SizedBox(
           width: context.width,
@@ -33,6 +34,7 @@ class ManipulatedGamePage extends StatelessWidget {
                       orElse: () => Container(),
                       loading: () => Image.asset(Assets.images.video.path),
                       success: (pathIndex) {
+                        print(pathIndex);
                         return Image.asset(dice[pathIndex[index]]);
                       },
                     );
