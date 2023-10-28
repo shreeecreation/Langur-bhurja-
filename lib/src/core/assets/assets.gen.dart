@@ -21,6 +21,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/heart.png
   AssetGenImage get heart => const AssetGenImage('assets/images/heart.png');
 
+  /// File path: assets/images/icon.png
+  AssetGenImage get icon => const AssetGenImage('assets/images/icon.png');
+
   /// File path: assets/images/ita.png
   AssetGenImage get ita => const AssetGenImage('assets/images/ita.png');
 
@@ -35,20 +38,17 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [bhurja, chiri, heart, ita, langur, surat, video];
+      [bhurja, chiri, heart, icon, ita, langur, surat, video];
 }
 
 class $AssetsSoundsGen {
   const $AssetsSoundsGen();
 
   /// File path: assets/sounds/diceroll.mp3
-  String get dicerollMp3 => 'assets/sounds/diceroll.mp3';
-
-  /// File path: assets/sounds/diceroll.wav
-  String get dicerollWav => 'assets/sounds/diceroll.wav';
+  String get diceroll => 'assets/sounds/diceroll.mp3';
 
   /// List of all assets
-  List<String> get values => [dicerollMp3, dicerollWav];
+  List<String> get values => [diceroll];
 }
 
 class Assets {

@@ -40,13 +40,11 @@ class LandingPage extends StatelessWidget {
           child: Column(mainAxisAlignment: MainAxisAlignment.end, crossAxisAlignment: CrossAxisAlignment.center, children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              
               children: [
                 Image.asset(Assets.images.bhurja.path, height: 50),
-                5.horizontalSpace,
-                Text("Jhandi Munda \n Langur Bhurja", textAlign: TextAlign.center, style: AppStyles.text24PxSemiBold),
-                5.horizontalSpace,
-
+                10.horizontalSpace,
+                Text("Jhandi Munda\nLangur Bhurja", textAlign: TextAlign.center, style: AppStyles.text24PxSemiBold),
+                10.horizontalSpace,
                 Image.asset(Assets.images.bhurja.path, height: 50),
               ],
             ),
